@@ -5,12 +5,34 @@ import TaskForm from "./TaskForm";
 import "./App.css";
 
 function App() {
+  // Task 3: List of tasks
+  const tasks = ["Task 1", "Task 2", "Task 3", "Task 4", "Task 5"];
+
+  // Task 4: Function passed as prop
+  function handleAlert() {
+    alert("Button clicked!");
+  }
+
   return (
     <div className="App">
-      <h1>TEST</h1>
-      <Greeting username="Alice" /> <Greeting username="Bob" />
+      {/* Task 1 */}
+      <Greeting username="Alice" />
+      <Greeting username="Bob" />
+
+      {/* Task 2 */}
       <Counter />
-      <UserInfo name="Ericka Brown" age={31} />
+
+      {/* Task 3 */}
+      <ul>
+        {tasks.map((task, index) => (
+          <li key={index}>{task}</li>
+        ))}
+      </ul>
+
+      {/* Task 4 */}
+      <UserInfo name="Ericka Brown" age={31} handleClick={handleAlert} />
+
+      {/* Task 5 */}
       <TaskForm />
     </div>
   );
