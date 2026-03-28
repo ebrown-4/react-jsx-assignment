@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { useState } from "react";
 
 function Greeting({ username }) {
@@ -18,6 +19,10 @@ function Greeting({ username }) {
       <button onClick={handleChangeGreeting}>Change Greeting</button>
     </div>
   );
+=======
+function Greeting({ username }) {
+  return <h1>Hello, {username}!</h1>;
+>>>>>>> 9d251ffffa2c94f41b9bf8a2163b379a03e8c3f5
 }
 
 export default Greeting;
