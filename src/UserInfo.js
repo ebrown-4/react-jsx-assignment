@@ -1,22 +1,35 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
+
 class UserInfo extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            name: "Ericka Brown",
-            profession:"Web Developer"
-        };
-    }
-    render() {
-        const luckyNumber = Math.floor(Math.random() *10) + 1;
-        return (
-            <div>
-                <h2>User Information</h2>
-                <p>Name: {this.state.name}</p>
-                <p>Profession: {this.state.profession}</p>
-                <p>Lucky Number: {luckyNumber}</p>
-            </div>
-        );
-    }
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: "Ericka Brown",
+      profession: "Web Developer",
+      luckyNumber: Math.floor(Math.random() * 100) + 1
+    };
+  }
+
+  generateNewLuckyNumber = () => {
+    this.setState({
+      luckyNumber: Math.floor(Math.random() * 100) + 1
+    });
+  };
+
+  render() {
+    return (
+      <div>
+        <h2>User Information</h2>
+        <p>Name: {this.state.name}</p>
+        <p>Profession: {this.state.profession}</p>
+        <p>Your lucky number is: {this.state.luckyNumber}</p>
+
+        <button onClick={this.generateNewLuckyNumber}>
+          Generate New Lucky Number
+        </button>
+      </div>
+    );
+  }
 }
+
 export default UserInfo;
